@@ -1,1 +1,221 @@
-Coming soon!
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0034)https://mannequin-depth.github.io/ -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<style>
+  @import url(//fonts.googleapis.com/css?family=Google+Sans);
+  h1 { font-family: 'Google Sans', Arial, sans-serif; }
+</style>
+
+<title>
+AutoFlow: Learning a Better Training Set for Optical Flow
+</title>
+<link href="./AutoFlow_files/style.css" rel="stylesheet" type="text/css">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script type="text/javascript" async="" src="./AutoFlow_files/analytics.js"></script><script async="" src="./AutoFlow_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-65563403-3');
+</script>   
+</head>
+<body>
+<div class="container">
+  <p>&nbsp;</p>
+  <p><span class="title">AutoFlow: Learning a Better Training Set for Optical Flow</span>  </p>
+  <table border="0" align="center" class="authors">
+    <tbody><tr align="center">
+      <td><a href="https://deqings.github.io/">Deqing Sun</a></td>
+      <td><a href="https://people.csail.mit.edu/drdaniel/">Daniel Vlasic</a>
+      <td><a href="https://scholar.google.com/citations?user=LQvi5XAAAAAJ&hl=en">Charles Herrmann</a></td>
+      <td><a href="https://varunjampani.github.io/">Varun Jampani </a></td>
+      <td><a href="https://research.google/people/107089/">Michael Krainin </a></td>
+      <td><a href="https://scholar.google.com/citations?user=eZQNcvcAAAAJ&hl=en"> Huiwen Chang</a></td>   
+    </tr>
+  </tbody></table>
+  <table border="0" align="center" class="authors">
+    <tbody><tr align="center">
+      <td><a https://www.cs.cornell.edu/rdz/ href=" ">Ramin Zabih </a></td>
+      <td><a href="https://billf.mit.edu/">William T. Freeman</a></td>
+      <td><a href="https://people.csail.mit.edu/celiu/">Ce Liu</a></td>      
+    </tr>
+  </tbody></table>  
+  <table border="0" align="center" class="affiliations">
+    <tbody><tr>
+      <td align="center"><img src="./AutoFlow_files/GoogleAI_logo.png" width="50" height="48" alt=""></td>
+      <td align="left"><a href="https://research.google.com/">Google Research</a></td>
+    </tr>
+  </tbody></table>
+
+  <table width="999" border="0">
+    <tbody>
+      <tr>
+        <td align="center">| <a href="https://autoflow-google.github.io/#paper">Paper</a> |
+         <a href="https://autoflow-google.github.io/#samples">Samples</a> | 
+         <a href="https://autoflow-google.github.io/#code">Code (coming soon)</a> |
+         <a href="https://autoflow-google.github.io/#data">Dataset (coming soon)</a> |
+       </td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+<table width="200" border="0" align="center">
+    <tbody><tr>
+      <td><img src="./AutoFlow_files/teaser_cc.png" width="990" alt=""></td>
+    </tr>
+    <tr>
+      <td class="caption">
+      <p>
+         Left: <b>Pipelines for optical flow</b>.  A typical pipeline pre-trains models on static datasets,e.g., FlyingChairs, and then evaluates the performance on a target dataset,e.g., Sintel.  AutoFlow learns pre-training data which is optimized ona target dataset.  Right: <b> Accuracy w.r.t. number of pre-training examples on Sintel.final. </b> Four AutoFlow pre-training examples with augmentation achieve lower errors than 22,872 FlyingChairs pre-training examples with augmentation.  The gap between PWC-Net and RAFT becomes small when pre-trained on enough AutoFlow examples.
+    </p>
+    </td>
+    </tr>
+  </tbody></table>
+<!--   <table width="998" border="0">
+    <tbody>
+      <tr>
+        <td width="292" align="right"><img src="./AutoFlow_files/new.gif" width="65" height="35" alt=""></td>
+        <td width="403"><span class="venue">AutoFlow dataset<a href=" "> is now available</a>!</span></td>
+        <td width="289"><img src="./AutoFlow_files/new.gif" width="65" height="35" alt=""></td>
+      </tr>
+    </tbody>
+  </table> -->
+  <p><span class="section">Abstract</span> </p>
+  <p>
+    Synthetic datasets play a critical role in pre-training CNN models for optical flow, but they are painstaking to generate and hard to adapt to new applications. To automate the process,  we present AutoFlow, a simple and effective  method to  render training data for optical flow that optimizes the performance of a model on a target dataset. AutoFlow takes a layered approach to render synthetic data, where the motion, shape, and appearance of each layer are controlled by learnable hyperparameters. Experimental results show that  AutoFlow achieves state-of-the-art accuracy in pre-training both  PWC-Net and RAFT.
+  <br>
+  </p>
+  <p class="section">&nbsp;</p>
+
+<!--   <table width="200" border="0" align="center">
+    <tbody>
+      <tr>
+        <td><iframe src="./AutoFlow_files/fj_fK74y5_0.html" width="853" height="480" frameborder="0" id="video" aligh="center" allowfullscreen=""></iframe></td>
+      </tr>
+    </tbody>
+  </table> -->
+  <p class="section" id="paper">Papers</p>
+  <table width="940" border="0">
+    <tbody>
+      <tr>
+        <td width="175" height="100" align="left"><a href=" "><img src="./AutoFlow_files/Artboard 1@0.75x.png" alt="" width="140" height="167"></a></td>
+        <td width="5" rowspan="2">&nbsp;</td>
+        <td width="645">
+          <p>"AutoFlow: Learning a Better Training Set for Optical Flow"<br>
+            Deqing Sun, Daniel Vlasic, Charles Herrmann, Varun Jampani, Michael Krainin,  Huiwen Chang, Ramin Zabih, William T. Freeman, and Ce Liu<br>
+            <strong>Oral presentation</strong>, CVPR 2021. <br>
+            [<a href=" ">arXiv</a>][CVF] 
+          </p>
+<!-- <p><pre>
+@inproceedings{sun2021autoflow,
+  title={AutoFlow: Learning a Better Training Set for Optical Flow},
+  author={Sun, Deqing and Vlasic, Daniel and Herrmann, Charles and Jampani, Varun and Krainin, Michael
+  and Chang, Huiwen and Zabih, Ramin and Freeman, William T and Liu, Ce}, 
+  booktitle={CVPR}, year={2021} }
+  </pre> </p> -->
+      </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- <p class="section">&nbsp;</p> -->
+
+  <p class="section", id="samples">Samples</p>
+  <table width="587" height="136" border="0">
+
+<tbody>
+  <tr>
+    <td>
+    <img src="./AutoFlow_files/Samples/000_im1_im2.gif" width="192" height="162">
+    <img src="./AutoFlow_files/Samples/000_flow.jpg" width="192" height="162">
+    </td>
+    
+    <td>
+    <img src="./AutoFlow_files/Samples/001_im1_im2.gif" width="192" height="162">
+    <img src="./AutoFlow_files/Samples/001_flow.jpg" width="192" height="162">
+    </td>
+    
+    <td>
+    <img src="./AutoFlow_files/Samples/002_im1_im2.gif" width="192" height="162">
+    <img src="./AutoFlow_files/Samples/002_flow.jpg" width="192" height="162">
+    </td>
+    
+    <td>
+    <img src="./AutoFlow_files/Samples/003_im1_im2.gif" width="192" height="162">
+    <img src="./AutoFlow_files/Samples/003_flow.jpg" width="192" height="162">
+    </td>
+    
+    <td>
+    <img src="./AutoFlow_files/Samples/004_im1_im2.gif" width="192" height="162">
+    <img src="./AutoFlow_files/Samples/004_flow.jpg" width="192" height="162">
+    </td>
+  </tr>
+
+    <td>
+    <img src="./AutoFlow_files/Samples/005_im1_im2.gif" width="192" height="162">
+    <img src="./AutoFlow_files/Samples/005_flow.jpg" width="192" height="162">
+    </td>
+
+    <td>
+    <img src="./AutoFlow_files/Samples/006_im1_im2.gif" width="192" height="162">
+    <img src="./AutoFlow_files/Samples/006_flow.jpg" width="192" height="162">
+    </td>
+
+    <td>
+    <img src="./AutoFlow_files/Samples/007_im1_im2.gif" width="192" height="162">
+    <img src="./AutoFlow_files/Samples/007_flow.jpg" width="192" height="162">
+    </td>
+
+    <td>
+    <img src="./AutoFlow_files/Samples/008_im1_im2.gif" width="192" height="162">
+    <img src="./AutoFlow_files/Samples/008_flow.jpg" width="192" height="162">
+    </td>
+
+    <td>
+    <img src="./AutoFlow_files/Samples/009_im1_im2.gif" width="192" height="162">
+    <img src="./AutoFlow_files/Samples/009_flow.jpg" width="192" height="162">
+    </td>
+
+</tbody></table>
+
+  <p class="section", id="code">Code</p>
+  <table width="587" height="136" border="0">
+    <tbody>
+      <tr>
+        <td width="175"><img src="./AutoFlow_files/github.png" alt="" width="175" height="205"></td>
+        <td width="388" align="left"><ul>
+          <a >Coming soon</a>
+        </ul></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="section", id="data">Dataset</p>
+  <table width="587" height="136" border="0">
+    <tbody>
+      <tr>
+        <td width="175"><img src="./AutoFlow_files/dataset.png" alt="" width="175" height="105"></td>
+        <td width="388" align="left"><ul>
+          <a >Coming soon</a>
+        </ul></td>
+      </tr>
+    </tbody>
+  </table>  
+
+<p class="section", id="bibtex">Bibtex</p>
+
+<pre>
+@inproceedings{sun2021autoflow,
+  title={AutoFlow: Learning a Better Training Set for Optical Flow},
+  author={Sun, Deqing and Vlasic, Daniel and Herrmann, Charles and Jampani, Varun and Krainin, Michael
+   and Chang, Huiwen and Zabih, Ramin and Freeman, William T and Liu, Ce}, 
+    booktitle={CVPR},
+  year={2021}
+}
+</pre>
+
+
+
+</script>
+</body></html>
