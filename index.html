@@ -6,6 +6,156 @@
   h1 { font-family: 'Google Sans', Arial, sans-serif; }
 </style>
 
+
+<title>
+Disentangling Model and Training for Optical Flow
+</title>
+<link href="./Disentangling_files/style.css" rel="stylesheet" type="text/css">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script type="text/javascript" async="" src="./Disentangling_files/analytics.js"></script><script async="" src="./Disentangling_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-65563403-3');
+</script>   
+</head>
+<body>
+<div class="container">
+  <p>&nbsp;</p>
+  <p><span class="title">Disentangling Model and Training for Optical Flow</span>  </p>
+  <table border="0" align="center" class="authors">
+    <tbody><tr align="center">
+      <td><a href="https://deqings.github.io/">Deqing Sun</a></td>
+      <td><a href="https://scholar.google.com/citations?user=LQvi5XAAAAAJ&hl=en">Charles Herrmann</a></td>
+      <td><a href="https://fitsumreda.github.io/">Fitsum Reda </a></td>
+    </tr>
+  </tbody>
+  <tbody><tr align="center">
+      <td><a href="http://people.csail.mit.edu/mrub/">Michael Rubinstein </a></td>
+      <td><a href="https://www.cs.toronto.edu/~fleet/"> David Fleet</a></td>   
+      <td><a href="https://billf.mit.edu/">William T. Freeman</a></td>
+    </tr>
+  </tbody>
+  </table>
+  <table border="0" align="center" class="affiliations">
+    <tbody><tr>
+      <td align="center"><img src="./Disentangling_files/GoogleAI_logo.png" width="50" height="48" alt=""></td>
+      <td align="left"><a href="https://research.google.com/">Google Research</a></td>
+    </tr>
+  </tbody></table>
+
+  <table width="999" border="0">
+    <tbody>
+      <tr>
+        <td align="center">| <a href="https://autoflow-google.github.io/#paper">Paper</a> |
+         <a href="https://autoflow-google.github.io/#code">Code</a> |
+       </td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+<table width="200" border="0" align="center">
+    <tbody><tr>
+      <td><img src="./Disentangling_files/teaser.png" width="990" alt=""></td>
+    </tr>
+    <tr>
+      <td class="caption">
+      <p>
+      <b>Left: Large improvements with newly trained PWC-Net, IRR-PWC and RAFT</b>.  (left: originally
+published results in blue; results of our newly trained models in red). The newly trained RAFT is more accurate
+than all published methods on KITTI 2015 at the time of writing.  <b>Right: Visual comparison on a Davis sequence: </b>
+between the original [43] and our newly trained PWC-Net and RAFT, shows improved flow details, e.g. the hole
+between the cart and the person at the back. The newly trained PWC-Net recovers the hole between the cart and
+the front person better than RAFT.
+    </p>
+    </td>
+    </tr>
+  </tbody></table>
+<!--   <table width="998" border="0">
+    <tbody>
+      <tr>
+        <td width="292" align="right"><img src="./Disentangling_files/new.gif" width="65" height="35" alt=""></td>
+        <td width="403"><span class="venue">AutoFlow dataset<a href=" "> is now available</a>!</span></td>
+        <td width="289"><img src="./Disentangling_files/new.gif" width="65" height="35" alt=""></td>
+      </tr>
+    </tbody>
+  </table> -->
+  <p><span class="section">Abstract</span> </p>
+  <p>
+How important are training details and datasets to recent optical flow models
+like RAFT? And do they generalize? To explore these questions, rather than
+develop a new model, we revisit three prominent models, PWC-Net, IRR-PWC and
+RAFT, with a common set of modern training techniques and datasets, and observe
+significant performance gains, demonstrating the importance and generality of
+these training details. Our newly trained PWC-Net and IRR-PWC models show
+surprisingly large improvements, up to 30% versus original published results on
+Sintel and KITTI 2015 benchmarks. They outperform the more recent Flow1D
+on KITTI 2015 while being 3× faster during inference. Our newly trained RAFT
+achieves an Fl-all score of 4.31% on KITTI 2015, more accurate than all published
+optical flow methods at the time of writing. Our results demonstrate the benefits
+of separating the contributions of models, training techniques and datasets when
+analyzing performance gains of optical flow methods. Our source code will be
+publicly available
+  <br>
+  </p>
+  <p class="section">&nbsp;</p>
+
+<!--   <table width="200" border="0" align="center">
+    <tbody>
+      <tr>
+        <td><iframe src="./Disentangling_files/fj_fK74y5_0.html" width="853" height="480" frameborder="0" id="video" aligh="center" allowfullscreen=""></iframe></td>
+      </tr>
+    </tbody>
+  </table> -->
+  <p class="section" id="paper">Papers</p>
+  <table width="940" border="0">
+    <tbody>
+      <tr>
+        <td width="175" height="100" align="left"><a href=" "><img src="./Disentangling_files/Artboard 1@0.75x.png" alt="" width="140" height="167"></a></td>
+        <td width="5" rowspan="2">&nbsp;</td>
+        <td width="645"><p>"Disentangling Model and Training for Optical Flow"<br>
+            Deqing Sun, Charles Herrmann, Fitsum Reda, Michael Rubinstein, David Fleet, and William T. Freeman<br>
+          </p>
+          <p><em>ECCV 2022<br>
+            <br>
+        </em>[<a href="https://arxiv.org/pdf/2203.10712.pdf">Arxiv</a>][CVF] 
+        <br>
+        <br>
+        </p>
+      </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- <p class="section">&nbsp;</p> -->
+
+
+  <p class="section", id="code">Code</p>
+  <table width="900" height="136" border="0">
+    <tbody>
+      <tr>
+        <td width="100"><img src="./AutoFlow_files/github.png" alt="" width="100" height="120"></td>
+        <td width="800" align="left"><ul>
+          <a href="https://github.com/google-research/opticalflow-autoflow">Link to code for "Disentangling Architecture and Training for Optical Flow" and "AutoFlow: Learning a Better Training Set for Optical Flow".</a>
+        </ul></td>
+      </tr>
+    </tbody>
+  </table>
+
+<p class="section", id="bibtex">Bibtex</p>
+<pre>
+@inproceedings{sun2022disentangling,
+  title={Disentangling Architecture and Training for Optical Flow},
+  author={Sun, Deqing and Herrmann, Charles and Reda, Fitsum and Rubinstein, Michael
+   and Fleet, David J. and Freeman, William T}, 
+    booktitle={ECCV},
+  year={2022}
+}
+</pre>
+
+
 <title>
 AutoFlow: Learning a Better Training Set for Optical Flow
 </title>
@@ -53,7 +203,7 @@ AutoFlow: Learning a Better Training Set for Optical Flow
       <tr>
         <td align="center">| <a href="https://autoflow-google.github.io/#paper">Paper</a> |
          <a href="https://autoflow-google.github.io/#samples">Samples</a> | 
-         <a href="https://autoflow-google.github.io/#code">Code (coming soon)</a> |
+         <a href="https://autoflow-google.github.io/#code">Code (available now!)</a> |
          <a href="https://autoflow-google.github.io/#data">Dataset (available now!)</a> |
        </td>
       </tr>
@@ -180,12 +330,12 @@ AutoFlow: Learning a Better Training Set for Optical Flow
 </tbody></table>
 
   <p class="section", id="code">Code</p>
-  <table width="587" height="136" border="0">
+  <table width="900" height="136" border="0">
     <tbody>
       <tr>
-        <td width="175"><img src="./AutoFlow_files/github.png" alt="" width="175" height="205"></td>
-        <td width="388" align="left"><ul>
-          <a >Coming soon</a>
+        <td width="100"><img src="./AutoFlow_files/github.png" alt="" width="100" height="120"></td>
+        <td width="800" align="left"><ul>
+          <a href="https://github.com/google-research/opticalflow-autoflow">Link to code for "Disentangling Architecture and Training for Optical Flow" and "AutoFlow: Learning a Better Training Set for Optical Flow".</a>
         </ul></td>
       </tr>
     </tbody>
