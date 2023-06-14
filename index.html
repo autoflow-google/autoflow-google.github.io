@@ -6,10 +6,158 @@
   h1 { font-family: 'Google Sans', Arial, sans-serif; }
 </style>
 
-
 <title>
-Disentangling Architecture and Training for Optical Flow
+AutoFlow
 </title>
+
+
+<link href="./Disentangling_files/style.css" rel="stylesheet" type="text/css">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script type="text/javascript" async="" src="./Disentangling_files/analytics.js"></script><script async="" src="./Disentangling_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-65563403-3');
+</script>   
+</head>
+
+
+<body>
+<div class="container" id="menu">
+  <table width="999" border="0">
+    <tbody>
+      <tr>
+        <td align="center"><a href="#autoflow"><p>AutoFlow: Learning a Better Training Set for Optical Flow<br>CVPR 2021</p></a></td>
+        <td align="center"><a href="#disentangling"><p>Disentangling Architecture and Training for Optical Flow<br>ECCV 2022</p></a></td>
+        <td align="center"><a href="#selfautoflow"><p>Self-supervised AutoFlow<br>CVPR 2023</p></a></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <hr>
+  <p>&nbsp;</p>
+  <p><span class="title" id="selfautoflow">Self-supervised AutoFlow</span>  </p>
+  <table border="0" align="center" class="authors">
+    <tbody><tr align="center">
+      <td><a href="https://hhsinping.github.io/">Hsin-Ping Huang</a></td>
+      <td><a href="https://scholar.google.com/citations?user=LQvi5XAAAAAJ&hl=en">Charles Herrmann</a></td>
+      <td><a href="https://hurjunhwa.github.io/">Junhwa Hur</a></td>
+      <td><a href="https://erikalu.com/">Erika Lu</a></td>
+    </tr>
+  </tbody>
+  <tbody><tr align="center">
+      <td><a href="https://kylesargent.github.io/">Kyle Sargent</a></td>
+      <td><a href="https://scholar.google.com/citations?user=NLOh3SUAAAAJ&hl=en">Austin Stone</a></td>   
+      <td><a href="http://faculty.ucmerced.edu/mhyang/">Ming-Hsuan Yang</a></td>
+      <td><a href="https://deqings.github.io/">Deqing Sun</a></td>	  
+    </tr>
+  </tbody>
+  </table>
+  <table border="0" align="center" class="affiliations">
+    <tbody><tr>
+      <td align="center"><img src="./Disentangling_files/GoogleAI_logo.png" width="50" height="48" alt=""></td>
+      <td align="left"><a href="https://research.google.com/">Google Research</a></td>
+    </tr>
+  </tbody></table>
+
+  <table width="999" border="0">
+    <tbody>
+      <tr>
+        <td align="center">| <a href="#paper_selfautoflow">Paper</a> |
+         <a href="#code_selfautoflow">Code</a> |
+       </td>	   
+      </tr>
+    </tbody>
+  </table>
+  <br>
+<table width="200" border="0" align="center">
+    <tbody><tr>
+      <td><img src="./SelfAutoFlow_files/teaser.png" width="990" alt=""></td>
+    </tr>
+    <tr>
+      <td class="caption">
+      <p>
+      <b>Self-supervised AutoFlow</b> learns to generate an optical flow training set through self-supervision on the target domain. It
+performs comparable to supervised AutoFlow on Sintel and KITTI without requiring ground truth (GT) and learns a better dataset for
+real-world DAVIS, where GT is not available. We report optical flow accuracy on Sintel and KITTI, and keypoint propagation accuracy on
+DAVIS.
+    </p>
+    </td>
+    </tr>
+  </tbody></table>
+
+  <p><span class="section">Abstract</span> </p>
+  <p>
+Recently, AutoFlow has shown promising results on learning a training set for 
+optical flow, but requires ground truth labels in the target domain to compute 
+its search metric. Observing a strong correlation between the ground truth 
+search metric and self-supervised losses, we introduce self-supervised AutoFlow
+to handle real-world videos without ground truth labels. Using self-supervised
+loss as the search metric, our self-supervised AutoFlow performs on par with 
+AutoFlow on Sintel and KITTI where ground truth is available, and performs 
+better on the real-world DAVIS dataset. We further explore using self-supervised 
+AutoFlow in the (semi-)supervised setting and obtain competitive results 
+against the state of the art.
+  <br>
+  </p>
+  <p class="section">&nbsp;</p>
+
+
+  <p class="section" id="paper_selfautoflow">Papers</p>
+  <table width="940" border="0">
+    <tbody>
+      <tr>
+        <td width="175" height="100" align="left"><a href=" "><img src="./SelfAutoFlow_files/paper.png" alt="" width="140" height="167"></a></td>
+        <td width="5" rowspan="2">&nbsp;</td>
+        <td width="645">
+        <p>
+          "Self-supervised AutoFlow"<br>
+          Hsin-Ping Huang, Charles Herrmann, Junhwa Hur, Erika Lu, Kyle Sargent, Austin Stone, Ming-Hsuan Yang, and Deqing Sun<br>
+          CVPR 2023.<br>
+          [<a href="https://arxiv.org/abs/2212.01762">Arxiv</a>][<a href="https://openaccess.thecvf.com/content/CVPR2023/html/Huang_Self-Supervised_AutoFlow_CVPR_2023_paper.html">CVF</a>]
+        </p>
+      </td>
+      </tr>
+    </tbody>
+  </table>
+  
+
+  <p class="section", id="code_selfautoflow">Code</p>
+  <table width="900" height="136" border="0">
+    <tbody>
+      <tr>
+        <td width="100"><img src="./AutoFlow_files/github.png" alt="" width="100" height="120"></td>
+        <td width="800" align="left"><ul>
+          <a href="https://github.com/google-research/opticalflow-autoflow">Link to code for "Self-supervised AutoFlow".</a>
+        </ul></td>
+      </tr>
+    </tbody>
+  </table>
+  
+
+<p class="section", id="bibtex">Bibtex</p>
+<pre>
+@inproceedings{huang2023self,
+  title={Self-supervised AutoFlow},
+  author={Huang, Hsin-Ping and Herrmann, Charles and Hur, Junhwa and Lu, Erika
+	and Sargent, Kyle and Stone, Austin and Yang, Ming-Hsuan and Sun, Deqing}, 
+  booktitle={CVPR},
+  year={2023}
+}
+</pre>
+  <table width="999" border="0">
+    <tbody>
+      <tr>
+		<td align="center"><a href="#menu">[Back To Top]</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+<hr>
 <link href="./Disentangling_files/style.css" rel="stylesheet" type="text/css">
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script type="text/javascript" async="" src="./Disentangling_files/analytics.js"></script><script async="" src="./Disentangling_files/js"></script>
@@ -24,7 +172,7 @@ Disentangling Architecture and Training for Optical Flow
 <body>
 <div class="container">
   <p>&nbsp;</p>
-  <p><span class="title">Disentangling Architecture and Training for Optical Flow</span>  </p>
+  <p><span class="title" id="disentangling">Disentangling Architecture and Training for Optical Flow</span>  </p>
   <table border="0" align="center" class="authors">
     <tbody><tr align="center">
       <td><a href="https://deqings.github.io/">Deqing Sun</a></td>
@@ -49,8 +197,8 @@ Disentangling Architecture and Training for Optical Flow
   <table width="999" border="0">
     <tbody>
       <tr>
-        <td align="center">| <a href="https://autoflow-google.github.io/#paper">Paper</a> |
-         <a href="https://autoflow-google.github.io/#code">Code</a> |
+        <td align="center">| <a href="#paper_disentangling">Paper</a> |
+         <a href="#code_disentangling">Code</a> |
        </td>
       </tr>
     </tbody>
@@ -96,8 +244,7 @@ on KITTI 2015 while being 3× faster during inference. Our newly trained RAFT
 achieves an Fl-all score of 4.31% on KITTI 2015, more accurate than all published
 optical flow methods at the time of writing. Our results demonstrate the benefits
 of separating the contributions of models, training techniques and datasets when
-analyzing performance gains of optical flow methods. Our source code will be
-publicly available
+analyzing performance gains of optical flow methods.
   <br>
   </p>
   <p class="section">&nbsp;</p>
@@ -109,7 +256,7 @@ publicly available
       </tr>
     </tbody>
   </table> -->
-  <p class="section" id="paper">Papers</p>
+  <p class="section" id="paper_disentangling">Papers</p>
   <table width="940" border="0">
     <tbody>
       <tr>
@@ -120,7 +267,7 @@ publicly available
           "Disentangling Architecture and Training for Optical Flow"<br>
           Deqing Sun<sup>T,*</sup>, Charles Herrmann<sup>*</sup>, Fitsum Reda, Michael Rubinstein, David J. Fleet, and William T. Freeman<br>
           ECCV 2022. <sup>T</sup> project lead, <sup>*</sup> equal technical contribution<br>
-          [<a href="https://arxiv.org/pdf/2203.10712.pdf">Arxiv</a>][CVF] 
+          [<a href="https://arxiv.org/pdf/2203.10712.pdf">Arxiv</a>][<a href="https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136820159.pdf">CVF</a>]
         </p>
       </td>
       </tr>
@@ -130,13 +277,13 @@ publicly available
   <!-- <p class="section">&nbsp;</p> -->
 
 
-  <p class="section", id="code">Code</p>
+  <p class="section", id="code_disentangling">Code</p>
   <table width="900" height="136" border="0">
     <tbody>
       <tr>
         <td width="100"><img src="./AutoFlow_files/github.png" alt="" width="100" height="120"></td>
         <td width="800" align="left"><ul>
-          <a href="https://github.com/google-research/opticalflow-autoflow">Link to code for "Disentangling Architecture and Training for Optical Flow" and "AutoFlow: Learning a Better Training Set for Optical Flow".</a>
+          <a href="https://github.com/google-research/opticalflow-autoflow">Link to code for "Disentangling Architecture and Training for Optical Flow".</a>
         </ul></td>
       </tr>
     </tbody>
@@ -152,11 +299,17 @@ publicly available
   year={2022}
 }
 </pre>
+  <table width="999" border="0">
+    <tbody>
+      <tr>
+		<td align="center"><a href="#menu">[Back To Top]</a></td>
+      </tr>
+    </tbody>
+  </table>
 
 
-<title>
-AutoFlow: Learning a Better Training Set for Optical Flow
-</title>
+
+<hr>
 <link href="./AutoFlow_files/style.css" rel="stylesheet" type="text/css">
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script type="text/javascript" async="" src="./AutoFlow_files/analytics.js"></script><script async="" src="./AutoFlow_files/js"></script>
@@ -171,7 +324,7 @@ AutoFlow: Learning a Better Training Set for Optical Flow
 <body>
 <div class="container">
   <p>&nbsp;</p>
-  <p><span class="title">AutoFlow: Learning a Better Training Set for Optical Flow</span>  </p>
+  <p><span class="title" id="autoflow">AutoFlow: Learning a Better Training Set for Optical Flow</span>  </p>
   <table border="0" align="center" class="authors">
     <tbody><tr align="center">
       <td><a href="https://deqings.github.io/">Deqing Sun</a></td>
@@ -199,10 +352,10 @@ AutoFlow: Learning a Better Training Set for Optical Flow
   <table width="999" border="0">
     <tbody>
       <tr>
-        <td align="center">| <a href="https://autoflow-google.github.io/#paper">Paper</a> |
-         <a href="https://autoflow-google.github.io/#samples">Samples</a> | 
-         <a href="https://autoflow-google.github.io/#code">Code (available now!)</a> |
-         <a href="https://autoflow-google.github.io/#data">Dataset (available now!)</a> |
+        <td align="center">| <a href="#paper">Paper</a> |
+         <a href="#samples">Samples</a> | 
+         <a href="#code">Code (available now!)</a> |
+         <a href="#data">Dataset (available now!)</a> |
        </td>
       </tr>
     </tbody>
@@ -253,7 +406,7 @@ AutoFlow: Learning a Better Training Set for Optical Flow
           <p>"AutoFlow: Learning a Better Training Set for Optical Flow"<br>
             Deqing Sun, Daniel Vlasic, Charles Herrmann, Varun Jampani, Michael Krainin,  Huiwen Chang, Ramin Zabih, William T. Freeman, and Ce Liu<br>
             <strong>Oral presentation</strong>, CVPR 2021. <br>
-            [<a href="https://arxiv.org/pdf/2104.14544.pdf">arXiv</a>][CVF] 
+            [<a href="https://arxiv.org/pdf/2104.14544.pdf">arXiv</a>][<a href="https://openaccess.thecvf.com/content/CVPR2021/html/Sun_AutoFlow_Learning_a_Better_Training_Set_for_Optical_Flow_CVPR_2021_paper.html">CVF</a>] 
           </p>
 <!-- <p><pre>
 @inproceedings{sun2021autoflow,
@@ -333,7 +486,7 @@ AutoFlow: Learning a Better Training Set for Optical Flow
       <tr>
         <td width="100"><img src="./AutoFlow_files/github.png" alt="" width="100" height="120"></td>
         <td width="800" align="left"><ul>
-          <a href="https://github.com/google-research/opticalflow-autoflow">Link to code for "Disentangling Architecture and Training for Optical Flow" and "AutoFlow: Learning a Better Training Set for Optical Flow".</a>
+          <a href="https://github.com/google-research/opticalflow-autoflow">Link to code for "AutoFlow: Learning a Better Training Set for Optical Flow".</a>
         </ul></td>
       </tr>
     </tbody>
@@ -367,6 +520,14 @@ AutoFlow: Learning a Better Training Set for Optical Flow
   year={2021}
 }
 </pre>
+  <table width="999" border="0">
+    <tbody>
+      <tr>
+		<td align="center"><a href="#menu">[Back To Top]</a></td>
+      </tr>
+    </tbody>
+  </table>
+
 
 
 
